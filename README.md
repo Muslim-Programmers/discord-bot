@@ -1,1 +1,1 @@
-# discord-bot
+# Muslim Programmers commuity bot for discord
