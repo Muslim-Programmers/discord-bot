@@ -27,7 +27,7 @@ async def on_ready():
 
 
 
-extensions = ['Cogs.Music','Cogs.administrator', 'Cogs.events','Cogs.misc commands','Cogs.Activity','Cogs.Help','Cogs.random','Cogs.quran','Cogs.hadith','Cogs.hijricalendar','Cogs.mushaf','Cogs.dua','Cogs.tafsir','Cogs.tafsir-english','Cogs.prayertimes']
+extensions = ['Cogs.time','Cogs.Music','Cogs.administrator', 'Cogs.events','Cogs.misc commands','Cogs.Activity','Cogs.Help','Cogs.random','Cogs.quran','Cogs.hadith','Cogs.hijricalendar','Cogs.mushaf','Cogs.dua','Cogs.tafsir','Cogs.tafsir-english','Cogs.prayertimes']
 
 if __name__ == '__main__':
     for extension in extensions:
