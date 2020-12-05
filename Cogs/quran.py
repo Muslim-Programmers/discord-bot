@@ -5,8 +5,7 @@ from utils import convert_to_arabic_number, make_embed
 from collections import OrderedDict
 from dbhandler import create_connection, update_guild_translation, get_guild_translation
 
-INVALID_TRANSLATION = "**Invalid translation**. List of translations: <https://github.com/galacticwarrior9/is" \
-                      "lambot/blob/master/Translations.md>"
+INVALID_TRANSLATION = "**Invalid translation**. List of translations: <https://github.com/Muslim-Programmers/discord-bot/blob/main/Translations.md>"
 
 INVALID_ARGUMENTS_ARABIC = "**Invalid arguments!** Type `{0}aquran [surah]:[ayah]`. \n\nExample: `{0}aquran 1:1`" \
                                "\n\nTo send multiple verses, type `{0}quran [surah]:[first ayah]-[last ayah]`" \
