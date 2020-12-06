@@ -27,7 +27,7 @@ async def on_ready():
 
 
 
-extensions = ['Cogs.time','Cogs.Music','Cogs.administrator', 'Cogs.events','Cogs.misc commands','Cogs.Activity','Cogs.Help','Cogs.random','Cogs.quran','Cogs.hadith','Cogs.hijricalendar','Cogs.prayertimes']
+extensions = ['Cogs.slots','Cogs.time','Cogs.Music','Cogs.administrator', 'Cogs.events','Cogs.misc commands','Cogs.Activity','Cogs.Help','Cogs.random','Cogs.quran','Cogs.hadith','Cogs.hijricalendar','Cogs.prayertimes']
 
 if __name__ == '__main__':
     for extension in extensions:
@@ -40,4 +40,4 @@ if __name__ == '__main__':
 
 
 
-client.run('NjU0MjQ4MzAxNDY5ODkyNjIx.XfCyNg.2AtYKLXLb3SYUPWGx99Rqx9VVTg')
+client.run('TOKEN')
