@@ -4,8 +4,11 @@ import json
 import asyncio
 import os
 import emoji
+import requests
+import shutil
 from discord.ext import commands
 from discord.utils import get
+from PIL import Image,ImageFont,ImageDraw
 #filter outdated & and new filter
 class EventsCog(commands.Cog):
     def __init__(self,bot):
@@ -16,11 +19,30 @@ class EventsCog(commands.Cog):
     async def on_member_join(self, member):
         for channel in member.guild.channels:
             if str(channel) == "welcome":
-                embed = discord.Embed(color=0x4a3d9a)
-                embed.add_field(name="Welcome", value=f"{member.name} has joined {member.guild.name}", inline=False)
-                embed.set_image(url="https://cdn.discordapp.com/attachments/783714830560395304/784122149987287090/esselemualeykumverahmetullah-651.png")
-                await channel.send(embed=embed)
 
+                avatar = member.avatar_url_as(static_format='jpg', size=1024)
+                response = requests.get(avatar,stream=True)
+                file = open("assets/user.jpg","wb")
+                response.raw_decode_content = True
+                shutil.copyfileobj(response.raw,file)
+                del response
+                bg = Image.open("assets/code.jpg")
+                user = Image.open("assets/user.jpg")
+                user = user.resize((300,300))
+                mask_im = Image.new("L", user.size, 0)
+                draw = ImageDraw.Draw(mask_im)
+                draw.ellipse((0, 0, 300, 300), fill=255)
+                mask_im.save('assets/mask_circle.jpg', quality=100)
+                    #(140, 50, 260, 170) fucking circle
+                bg.paste(user, (450, 100), mask_im)
+                    #bg = Image.open("code.jpg")
+                    #user = Image.open("user.jpg")
+                font = ImageFont.truetype("assets/BebasNeue.ttf",120)
+                text = "Welcome"
+                draw = ImageDraw.Draw(bg)
+                draw.text((10,80),text,(255,255,255),font=font)
+                bg.save('assets/image.jpg')
+                await channel.send(file = discord.File("assets/image.jpg"))
 
     @commands.Cog.listener()
     async def on_command_error(self,ctx, error):

@@ -33,11 +33,6 @@ if __name__ == '__main__':
     for extension in extensions:
         client.load_extension(extension)
 
-
-# 'Cogs.Music',
-
-
-
-
+# 'Cogs.slots','Cogs.time','Cogs.Music','Cogs.administrator', 'Cogs.events','Cogs.misc commands','Cogs.Activity','Cogs.Help','Cogs.random','Cogs.quran','Cogs.hadith','Cogs.hijricalendar','Cogs.prayertimes'
 
 client.run('TOKEN')
